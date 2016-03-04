@@ -13,6 +13,7 @@ public class Main {
     public static boolean isRunExport;
     public static boolean isRunPopulate;
     private static final String ABSOLUTE_PATH = new File("").getAbsolutePath();
+    public String t;
 
     public static void main(String[] args) {
 
