@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="Proj01:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Proj01_jar</output-path>
+    <root id="root">
+      <element id="archive" name="Proj01.jar">
+        <element id="module-output" name="Proj01" />
+      </element>
+      <element id="library" level="project" name="force-wsc-35.2.0-uber" />
+      <element id="library" level="project" name="univocity-parsers-1.5.6" />
+      <element id="library" level="project" name="enterprise" />
+    </root>
+  </artifact>
+</component>
