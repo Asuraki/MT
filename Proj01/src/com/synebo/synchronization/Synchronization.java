@@ -7,7 +7,6 @@ import com.sforce.ws.ConnectorConfig;
 import com.synebo.Main;
 import com.synebo.exception.ParserException;
 import com.synebo.exception.SynchronizationException;
-import com.synebo.importToSFDC.components.ImportApartmentToSFDCLC;
 import com.synebo.populate.components.PopulateZipCode;
 import com.synebo.tools.SingleLineFormatter;
 import com.synebo.beans.SettingsBean;
@@ -53,7 +52,7 @@ public class Synchronization implements AutoCloseable {
     public void startProcess() {
         if(Main.isRunImportAPAR)
             for (String filePath : loadingFilePath("APAR"))
-                new ImportApartmentToSFDCLC(connection, logger, filePath).execute();
+                new ImportApartmentToSFDC(connection, logger, filePath).execute();
 
         if(Main.isRunImportTYPE)
             for (String filePath : loadingFilePath("TYPE"))
@@ -137,7 +136,7 @@ public class Synchronization implements AutoCloseable {
             logger.info("SessionId: " + config.getSessionId());
         } catch (ConnectionException e) {
             logger.severe("Connection refused: " + e.getMessage());
-            if (countTry > 4)
+            if (countTry > 5)
                 throw new SynchronizationException("Can not establish connection to Salesforce. Stop working.", e);
             logger.info("I will try again.");
             countTry++;

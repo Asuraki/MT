@@ -120,11 +120,21 @@ public class PopulateZipCode extends AbstractPopulate {
 
         // set zipCode to Cortege from csv
         for(ZipCodeBean zipCodeBean : zipCodeBeans) {
+//            for(Cortege cortege1 : cortegeList) {
+//                if(
+//                        Objects.equals(cortege1.cityCode, zipCodeBean.getA()) &&
+//                        Objects.equals(cortege1.streetCode, zipCodeBean.getJ()) &&
+//                        Objects.equals(Integer.valueOf(cortege1.houseNumber), Integer.valueOf(zipCodeBean.getD())) && cortege1.zipCode == null
+//                        )
+//                    cortege1.zipCode = zipCodeBean.getG();
+//            }
             for(Cortege cortege1 : cortegeList) {
-                if(Objects.equals(cortege1.cityCode, zipCodeBean.getA()) &&
-                        Objects.equals(cortege1.streetCode, zipCodeBean.getJ()) &&
+                if(
+                        Objects.equals(Integer.valueOf(cortege1.cityCode), Integer.valueOf(zipCodeBean.getA())) &&
+                        Objects.equals(Integer.valueOf(cortege1.streetCode), Integer.valueOf(zipCodeBean.getJ())) &&
                         Objects.equals(Integer.valueOf(cortege1.houseNumber), Integer.valueOf(zipCodeBean.getD())) &&
-                        cortege1.zipCode == null)
+                        cortege1.zipCode == null
+                    )
                     cortege1.zipCode = zipCodeBean.getG();
             }
         }

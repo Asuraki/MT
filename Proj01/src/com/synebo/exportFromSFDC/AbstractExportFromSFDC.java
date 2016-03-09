@@ -14,6 +14,7 @@ public abstract class AbstractExportFromSFDC implements ExportFromSFDC {
 
     protected EnterpriseConnection connection;
     protected Logger logger;
+    private int countTry = 0;
 
     public AbstractExportFromSFDC(EnterpriseConnection connection, Logger logger) {
         this.connection = connection;
@@ -29,6 +30,13 @@ public abstract class AbstractExportFromSFDC implements ExportFromSFDC {
             writeCSV();
             updateStatus();
             logger.info("Synchronization " + this + " is successful.");
+        } catch (ConnectionException e) {
+            if (countTry < 5) {
+                logger.warning("Problems with the connection. I will try again.");
+                countTry++;
+                execute();
+            } else
+                e.printStackTrace();
         } catch (Exception e) {
             logger.warning("Synchronization " + this + " is unsuccessful. Message: " + e.getMessage());
         }

@@ -18,6 +18,7 @@ public abstract class AbstractImportToSFDC implements ImportToSFDC {
     protected EnterpriseConnection connection;
     protected Logger logger;
     protected String filePath;
+    private int countTry = 0;
 
     public AbstractImportToSFDC(EnterpriseConnection connection, Logger logger, String filePath) {
         this.connection = connection;
@@ -34,9 +35,15 @@ public abstract class AbstractImportToSFDC implements ImportToSFDC {
             loadDataToSFDC();
             relocateCSV();
             logger.info("Synchronization " + this + " is successful.");
+        } catch (ConnectionException e) {
+            if (countTry < 5) {
+                logger.warning("Problems with the connection. I will try again.");
+                countTry++;
+                execute();
+            } else
+                e.printStackTrace();
         } catch (Exception e) {
             logger.warning("Synchronization " + this + " is unsuccessful. Message: " + e.getMessage());
-            //e.printStackTrace();
         }
     }
 
