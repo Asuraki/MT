@@ -78,8 +78,9 @@ public class ExportContactFromSFDC extends AbstractExportFromSFDC {
         CsvWriterSettings settings = new CsvWriterSettings();
         settings.setQuoteAllFields(false);
         settings.setRowWriterProcessor(new BeanWriterProcessor<ContactBean>(ContactBean.class));
-        settings.setHeaders("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
-                            "L", "M", "N", "O", "P", "Q", "R");
+        settings.setHeaders("FirstName", "LastName", "ID__c", "Gender__c", "Birthdate", "Address_String__c", "City__c",
+                            "Zip_Code__c", "Phone", "MobilePhone", "Relation_Code__c", "Healthcare_Services__c", "Fax",
+                            "Email", "Contact_SFDC_ID", "Account_SFDC_ID", "Center__c", "Contact_Role__c");
         CsvWriter writer = new CsvWriter(outputWriter, settings);
         writer.writeHeaders();
         ContactBean contactBean;
@@ -105,7 +106,8 @@ public class ExportContactFromSFDC extends AbstractExportFromSFDC {
         for(Contact contact : syncedList) {
             contact.setAddress_String__c(null);
             contact.setInterface_status__c("Synced");
-            contact.getBirthdate().add(Calendar.HOUR, 25); // ?????
+            if(contact.getBirthdate() != null)
+                contact.getBirthdate().add(Calendar.HOUR, 25); // ?????
             records[i] = contact;
             i++;
         }
@@ -113,7 +115,8 @@ public class ExportContactFromSFDC extends AbstractExportFromSFDC {
             contact.setAddress_String__c(null);
             contact.setInterface_status__c("Failed");
             contact.setContact_Sync_Failure_Reason__c(failedMap.get(contact));
-            contact.getBirthdate().add(Calendar.HOUR, 25); // ?????
+            if(contact.getBirthdate() != null)
+                contact.getBirthdate().add(Calendar.HOUR, 25); // ?????
             records[i] = contact;
             i++;
         }

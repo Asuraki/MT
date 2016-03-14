@@ -9,78 +9,78 @@ import com.univocity.parsers.annotations.Parsed;
  */
 public class ContactBean {
 
-    @Parsed(field = "A")
-    private String A;
+    @Parsed(field = "FirstName")
+    private String FirstName;
 
-    @Parsed(field = "B")
-    private String B;
+    @Parsed(field = "LastName")
+    private String LastName;
 
-    @Parsed(field = "C")
-    private String C;
+    @Parsed(field = "ID__c")
+    private String ID__c;
 
-    @Parsed(field = "D")
-    private String D;
+    @Parsed(field = "Gender__c")
+    private String Gender__c;
 
-    @Parsed(field = "E")
-    private String E;
+    @Parsed(field = "Birthdate")
+    private String Birthdate;
 
-    @Parsed(field = "F")
-    private String F;
+    @Parsed(field = "Address_String__c")
+    private String Address_String__c;
 
-    @Parsed(field = "G")
-    private String G;
+    @Parsed(field = "City__c")
+    private String City__c;
 
-    @Parsed(field = "H")
-    private String H;
+    @Parsed(field = "Zip_Code__c")
+    private String Zip_Code__c;
 
-    @Parsed(field = "I")
-    private String I;
+    @Parsed(field = "Phone")
+    private String Phone;
 
-    @Parsed(field = "J")
-    private String J;
+    @Parsed(field = "MobilePhone")
+    private String MobilePhone;
 
-    @Parsed(field = "K")
-    private String K;
+    @Parsed(field = "Relation_Code__c")
+    private String Relation_Code__c;
 
-    @Parsed(field = "L")
-    private String L;
+    @Parsed(field = "Healthcare_Services__c")
+    private String Healthcare_Services__c;
 
-    @Parsed(field = "M")
-    private String M;
+    @Parsed(field = "Fax")
+    private String Fax;
 
-    @Parsed(field = "N")
-    private String N;
+    @Parsed(field = "Email")
+    private String Email;
 
-    @Parsed(field = "O")
-    private String O;
+    @Parsed(field = "Contact_SFDC_ID")
+    private String Contact_SFDC_ID;
 
-    @Parsed(field = "P")
-    private String P;
+    @Parsed(field = "Account_SFDC_ID")
+    private String Account_SFDC_ID;
 
-    @Parsed(field = "Q")
-    private String Q;
+    @Parsed(field = "Center__c")
+    private String Center__c;
 
-    @Parsed(field = "R")
-    private String R;
+    @Parsed(field = "Contact_Role__c")
+    private String Contact_Role__c;
 
     public void setContact(Contact contact) {
-        A = contact.getFirstName();
-        B = contact.getLastName();
-        C = contact.getID__c();
-        D = contact.getGender__c();
-        E = Util.convertDateToString(contact.getBirthdate());
-        F = contact.getAddress_String__c();
-        G = contact.getCity__r() != null ? contact.getCity__r().getName() : null;
-        H = contact.getZip_Code__c();
-        I = contact.getPhone();
-        J = contact.getMobilePhone();
-        K = contact.getRelation_Code__c();
-        L = contact.getHealthcare_Services__c();
-        M = contact.getFax();
-        N = contact.getEmail();
-        O = contact.getId().substring(0, 15);
-        P = contact.getAccountId();
-        Q = contact.getCenter__c();
-        R = contact.getContact_Role__c();
+        FirstName = contact.getFirstName();
+        LastName = contact.getLastName();
+        ID__c = contact.getID__c();
+        Gender__c = contact.getGender__c();
+        Birthdate = Util.convertDateToString(contact.getBirthdate());
+        Address_String__c = contact.getAddress_String__c();
+        City__c = contact.getCity__r() != null ? contact.getCity__r().getName() : null;
+        Zip_Code__c = contact.getZip_Code__c();
+        Phone = contact.getPhone();
+        MobilePhone = contact.getMobilePhone();
+        Relation_Code__c = contact.getRelation_Code__c();
+        Healthcare_Services__c = contact.getHealthcare_Services__c();
+        Fax = contact.getFax();
+        Email = contact.getEmail();
+        Contact_SFDC_ID = contact.getId().substring(0, 15);
+        Account_SFDC_ID = contact.getAccountId();
+        Center__c = contact.getCenter__c();
+        Contact_Role__c = contact.getContact_Role__c();
     }
 }

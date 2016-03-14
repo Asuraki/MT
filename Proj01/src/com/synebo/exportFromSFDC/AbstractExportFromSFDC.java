@@ -39,6 +39,7 @@ public abstract class AbstractExportFromSFDC implements ExportFromSFDC {
                 e.printStackTrace();
         } catch (Exception e) {
             logger.warning("Synchronization " + this + " is unsuccessful. Message: " + e.getMessage());
+            //e.printStackTrace();
         }
     }
 
