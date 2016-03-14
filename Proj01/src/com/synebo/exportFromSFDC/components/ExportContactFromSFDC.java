@@ -79,7 +79,7 @@ public class ExportContactFromSFDC extends AbstractExportFromSFDC {
         settings.setQuoteAllFields(false);
         settings.setRowWriterProcessor(new BeanWriterProcessor<ContactBean>(ContactBean.class));
         settings.setHeaders("FirstName", "LastName", "ID__c", "Gender__c", "Birthdate", "Address_String__c", "City__c",
-                            "Zip_Code__c", "Phone", "MobilePhone", "Relation_Code__c", "Healthcare_Services__c", "Fax",
+                            "Zip_Code__c", "Phone", "MobilePhone", "Relation_code_index_c", "Healthcare_Services__c", "Fax",
                             "Email", "Contact_SFDC_ID", "Account_SFDC_ID", "Center__c", "Contact_Role__c");
         CsvWriter writer = new CsvWriter(outputWriter, settings);
         writer.writeHeaders();

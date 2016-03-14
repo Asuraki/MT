@@ -39,8 +39,8 @@ public class ContactBean {
     @Parsed(field = "MobilePhone")
     private String MobilePhone;
 
-    @Parsed(field = "Relation_Code__c")
-    private String Relation_Code__c;
+    @Parsed(field = "Relation_code_index_c")
+    private String Relation_code_index_c;
 
     @Parsed(field = "Healthcare_Services__c")
     private String Healthcare_Services__c;
@@ -74,7 +74,7 @@ public class ContactBean {
         Zip_Code__c = contact.getZip_Code__c();
         Phone = contact.getPhone();
         MobilePhone = contact.getMobilePhone();
-        Relation_Code__c = contact.getRelation_Code__c();
+        Relation_code_index_c = contact.getRelation_Code__c();
         Healthcare_Services__c = contact.getHealthcare_Services__c();
         Fax = contact.getFax();
         Email = contact.getEmail();
