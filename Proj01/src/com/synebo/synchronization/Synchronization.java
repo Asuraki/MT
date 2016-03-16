@@ -81,7 +81,8 @@ public class Synchronization implements AutoCloseable {
             isLogout = true;
             logger.info("Logged out.");
         } catch (Exception e) {
-            throw new Exception("Can not log out.", e);
+            System.out.println("Can not log out.");
+            //throw new Exception(, e);
         } finally {
             if(!isLogout)
                 logger.warning("Can not log out.");

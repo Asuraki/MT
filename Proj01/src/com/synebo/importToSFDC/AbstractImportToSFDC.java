@@ -44,6 +44,7 @@ public abstract class AbstractImportToSFDC implements ImportToSFDC {
                 e.printStackTrace();
         } catch (Exception e) {
             logger.warning("Synchronization " + this + " is unsuccessful. Message: " + e.getMessage());
+            //e.printStackTrace();
         }
     }
 
