@@ -109,5 +109,24 @@ public class myTest {
         //Calendar calendar = Util.convertStringToDate("24/03/16");
         //System.out.println(calendar.getTime());
         //System.out.println(Integer.valueOf("00040"));
+//        int f = 0;
+//        int g = 1;
+//        for(int i = 0; i <=15; i++) {
+//            System.out.println(f);
+//            f = f+g;
+//            g = f-g;
+//        }
+
+//        double t = 9.0;
+//        while (Math.abs(t - 9.0/t) > .001) {
+//            t = (9.0/t + t) /2.0;
+//            System.out.printf("%.5f\n", t);
+//        }
+//        int sum = 0;
+//        for( int i = 1; i < 1000; i++) {
+//            for (int j = 0; j < i; j++)
+//                sum++;
+//        }
+//        System.out.println('s'+4);
     }
 }

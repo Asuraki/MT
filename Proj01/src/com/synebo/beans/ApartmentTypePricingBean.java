@@ -70,6 +70,9 @@ public class ApartmentTypePricingBean {
 //        return Holding_VATPRICE;
 //    }
 
+    @Parsed(field = "AppTypeUnique")
+    private String AppTypeUnique;
+
     @Parsed(field = "House_ModelName")
     private String House_ModelName;
 
@@ -222,5 +225,9 @@ public class ApartmentTypePricingBean {
 
     public String getMaintenanceFees() {
         return MaintenanceFees;
+    }
+
+    public String getAppTypeUnique() {
+        return AppTypeUnique;
     }
 }

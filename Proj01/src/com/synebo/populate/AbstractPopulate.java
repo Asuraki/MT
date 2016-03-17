@@ -39,7 +39,7 @@ public abstract class AbstractPopulate implements Populate {
                 e.printStackTrace();
         }
         catch (Exception e) {
-            logger.warning("Synchronization " + this + " is unsuccessful. Message: " + e.getMessage());
+            logger.warning("Synchronization " + this + " is unsuccessful. "+e.getClass().getName()+" Message: " + e.getMessage());
         }
     }
 

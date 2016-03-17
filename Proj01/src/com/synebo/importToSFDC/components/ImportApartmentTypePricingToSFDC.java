@@ -76,7 +76,8 @@ public class ImportApartmentTypePricingToSFDC extends AbstractImportToSFDC {
 //
 //            forLookUp.put(apTypeBean.getUnique(), apartmentTypePricing);
 
-            apartmentTypePricing.setApartment_Type_Priority_ID__c(apTypeBean.getHouse_ModelName());
+            apartmentTypePricing.setApartment_Type_Priority_ID__c(apTypeBean.getAppTypeUnique());
+            apartmentTypePricing.setHouse_ModelName__c(apTypeBean.getHouse_ModelName());
             apartmentTypePricing.setPricing_Priority_ID__c(apTypeBean.getPricingUnique());
             apartmentTypePricing.setApartment_Type_Info__c(apTypeBean.getAppTypeCode());
             apartmentTypePricing.setAppTypeDes__c(apTypeBean.getAppTypeDes());
@@ -99,7 +100,7 @@ public class ImportApartmentTypePricingToSFDC extends AbstractImportToSFDC {
             apartmentTypePricing.setDeposit__c(Util.convertStringToBoolean(apTypeBean.getDeposit()));
             apartmentTypePricing.setMaintenanceFees__c(Util.convertStringToBoolean(apTypeBean.getMaintenanceFees()));
 
-            forLookUp.put(apTypeBean.getHouse_ModelName(), apartmentTypePricing);
+            forLookUp.put(apTypeBean.getAppTypeUnique(), apartmentTypePricing);
 
             apartmentTypePricingList[i] = apartmentTypePricing;
             i++;
