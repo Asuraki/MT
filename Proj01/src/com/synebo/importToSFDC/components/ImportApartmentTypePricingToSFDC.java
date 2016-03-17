@@ -88,7 +88,7 @@ public class ImportApartmentTypePricingToSFDC extends AbstractImportToSFDC {
             apartmentTypePricing.setModelName__c(apTypeBean.getModelName());
             apartmentTypePricing.setModelDes__c(apTypeBean.getModelDes());
             apartmentTypePricing.setActive__c(Util.convertStringToBoolean(apTypeBean.getActive()));
-            apartmentTypePricing.setNqtx_gcxim__c(apTypeBean.getNqtx_gcxim());
+            apartmentTypePricing.setRoomsNum__c(apTypeBean.getRoomsNum());
             apartmentTypePricing.setRate__c(apTypeBean.getRate());
             apartmentTypePricing.setAppQnt__c(apTypeBean.getAppQnt());
             apartmentTypePricing.setOpenDate__c(Util.convertStringToDate(apTypeBean.getOpenDate()));

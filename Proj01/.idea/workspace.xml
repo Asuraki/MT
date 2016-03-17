@@ -3,16 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="42d174de-a339-4ce2-968e-b683229396d1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Proj01_jar/Proj01.jar" afterPath="$PROJECT_DIR$/out/artifacts/Proj01_jar/Proj01.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Proj01/com/synebo/importToSFDC/AbstractImportToSFDC.class" afterPath="$PROJECT_DIR$/out/production/Proj01/com/synebo/importToSFDC/AbstractImportToSFDC.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Proj01/com/synebo/synchronization/Synchronization.class" afterPath="$PROJECT_DIR$/out/production/Proj01/com/synebo/synchronization/Synchronization.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Proj01/com/synebo/test/myTest.class" afterPath="$PROJECT_DIR$/out/production/Proj01/com/synebo/test/myTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Proj01_jar/enterprise.jar" afterPath="$PROJECT_DIR$/out/artifacts/Proj01_jar/enterprise.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Proj01/com/synebo/beans/ApartmentTypePricingBean.class" afterPath="$PROJECT_DIR$/out/production/Proj01/com/synebo/beans/ApartmentTypePricingBean.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Proj01/com/synebo/exportFromSFDC/AbstractExportFromSFDC.class" afterPath="$PROJECT_DIR$/out/production/Proj01/com/synebo/exportFromSFDC/AbstractExportFromSFDC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Proj01/com/synebo/importToSFDC/components/ImportApartmentTypePricingToSFDC.class" afterPath="$PROJECT_DIR$/out/production/Proj01/com/synebo/importToSFDC/components/ImportApartmentTypePricingToSFDC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Proj01/com/synebo/populate/AbstractPopulate.class" afterPath="$PROJECT_DIR$/out/production/Proj01/com/synebo/populate/AbstractPopulate.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../enterprise.jar" afterPath="$PROJECT_DIR$/../enterprise.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/synebo/beans/ApartmentTypePricingBean.java" afterPath="$PROJECT_DIR$/src/com/synebo/beans/ApartmentTypePricingBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/synebo/exportFromSFDC/AbstractExportFromSFDC.java" afterPath="$PROJECT_DIR$/src/com/synebo/exportFromSFDC/AbstractExportFromSFDC.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/synebo/importToSFDC/AbstractImportToSFDC.java" afterPath="$PROJECT_DIR$/src/com/synebo/importToSFDC/AbstractImportToSFDC.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/synebo/importToSFDC/components/ImportApartmentTypePricingToSFDC.java" afterPath="$PROJECT_DIR$/src/com/synebo/importToSFDC/components/ImportApartmentTypePricingToSFDC.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/synebo/populate/AbstractPopulate.java" afterPath="$PROJECT_DIR$/src/com/synebo/populate/AbstractPopulate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/synebo/test/myTest.java" afterPath="$PROJECT_DIR$/src/com/synebo/test/myTest.java" />
     </list>
     <ignored path="Proj01.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,9 +51,22 @@
       <file leaf-file-name="ImportApartmentTypePricingToSFDC.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/synebo/importToSFDC/components/ImportApartmentTypePricingToSFDC.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.36">
-              <caret line="109" column="41" selection-start-line="109" selection-start-column="41" selection-end-line="109" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.21636364">
+              <caret line="78" column="88" selection-start-line="78" selection-start-column="88" selection-end-line="78" selection-end-column="88" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ApartmentTypePricingBean.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/synebo/beans/ApartmentTypePricingBean.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="184" column="0" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
+              <folding>
+                <element signature="e#3774#3775#0" expanded="true" />
+                <element signature="e#3805#3806#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -153,9 +165,9 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="282" />
-    <option name="y" value="141" />
-    <option name="width" value="1281" />
+    <option name="x" value="113" />
+    <option name="y" value="99" />
+    <option name="width" value="1723" />
     <option name="height" value="934" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -1163,7 +1175,7 @@
       <workItem from="1458051023269" duration="5985000" />
       <workItem from="1458111337898" duration="5551000" />
       <workItem from="1458132775897" duration="3582000" />
-      <workItem from="1458198709939" duration="5350000" />
+      <workItem from="1458198709939" duration="8508000" />
     </task>
     <task id="LOCAL-00001" summary="commit2">
       <created>1457101124083</created>
@@ -1201,27 +1213,33 @@
       <option name="project" value="LOCAL" />
       <updated>1458118884226</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="edit pricing">
+      <created>1458204603509</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1458204603509</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="244036000" />
+    <option name="totallyTimeSpent" value="247194000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="282" y="141" width="1281" height="934" extended-state="0" />
+    <frame x="113" y="99" width="1723" height="934" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3266979" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944608" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.278402" sideWeight="0.5028665" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24707259" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.278402" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.278402" sideWeight="0.4971335" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22150259" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25143325" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21888153" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1255,7 +1273,8 @@
     <MESSAGE value="Edit header for export" />
     <MESSAGE value="Edit header" />
     <MESSAGE value="new apartment type pricing" />
-    <option name="LAST_COMMIT_MESSAGE" value="new apartment type pricing" />
+    <MESSAGE value="edit pricing" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit pricing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1651,17 +1670,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/synebo/beans/ApartmentTypePricingBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39454547">
-          <caret line="187" column="5" selection-start-line="187" selection-start-column="5" selection-end-line="187" selection-end-column="5" />
-          <folding>
-            <element signature="e#3780#3781#0" expanded="true" />
-            <element signature="e#3813#3814#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/synebo/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1670,10 +1678,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/synebo/beans/ApartmentTypePricingBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="184" column="0" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
+          <folding>
+            <element signature="e#3774#3775#0" expanded="true" />
+            <element signature="e#3805#3806#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/synebo/importToSFDC/components/ImportApartmentTypePricingToSFDC.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.36">
-          <caret line="109" column="41" selection-start-line="109" selection-start-column="41" selection-end-line="109" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.21636364">
+          <caret line="78" column="88" selection-start-line="78" selection-start-column="88" selection-end-line="78" selection-end-column="88" />
           <folding />
         </state>
       </provider>

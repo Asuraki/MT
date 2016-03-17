@@ -106,8 +106,8 @@ public class ApartmentTypePricingBean {
     @Parsed(field = "Active")
     private String Active;
 
-    @Parsed(field = "nqtx_gcxim")
-    private String nqtx_gcxim;
+    @Parsed(field = "RoomsNum")
+    private String RoomsNum;
 
     @Parsed(field = "Rate")
     private String Rate;
@@ -183,8 +183,8 @@ public class ApartmentTypePricingBean {
         return Active;
     }
 
-    public String getNqtx_gcxim() {
-        return nqtx_gcxim;
+    public String getRoomsNum() {
+        return RoomsNum;
     }
 
     public String getRate() {
