@@ -54,28 +54,32 @@ public class ImportApartmentToSFDC extends AbstractImportToSFDC {
     @Override
     protected void loadDataToSFDC() throws ConnectionException {
         SObject[] apartmentList = new SObject[apartmentBeans.size()];
-        Map<String, Apartment__c> forLookUp = new HashMap<>();
         Apartment__c apartment;
         int i = 0;
+
+        QueryResult queryResult = connection.query("SELECT " +
+                "Id, " +
+                "Apartment_Type_Priority_ID__c " +
+                "FROM Apartment_Type__c");
+
+        SObject[] records = queryResult.getRecords();
 
         for(ApartmentBean apBean : apartmentBeans) {
             apartment = new Apartment__c();
 
             // add field
+            apartment.setApartment_Priority_ID__c(apBean.getUnique());
             apartment.setName(apBean.getAppname());
             apartment.setApartment_Info__c(apBean.getAppdes());
-            apartment.setApartment_Status__c(apBean.getGrabstatusdes());
-            apartment.setApartment_Type_Priority_ID__c(apBean.getUnique()); // ?? external id
-            forLookUp.put(apBean.getUnique(), apartment); // lookup
-            apartment.setApartment_Priority_ID__c(apBean.getUnique()); // ?? external id
+            apartment.setApartment_Type_Priority_ID__c(apBean.getAppTypeUnique());
             apartment.setCenter_Code__c(Util.getLastTwoDigits(filePath));
             apartment.setOccupation__c(apBean.getAppstatusname());
             apartment.setOccupation_Info__c(apBean.getAppstatusdes());
             apartment.setBlock__c(apBean.getGush());
             //apartment.set???(apBean.getAPPTYPECODE()); tbd
             apartment.setApartment_Type_Info__c(apBean.getApptypedes());
-            //apartment.setHouse_Code__c(apBean.getHousecode());
-            //apartment.setHouse_Info__c(apBean.getHousedes());
+            apartment.setHouse_Code__c(apBean.getHousecode());
+            apartment.setHouse_Info__c(apBean.getHousedes());
             apartment.setRooms__c(apBean.getRoomsnum() == null ? null : Double.valueOf(apBean.getRoomsnum()));
             apartment.setBuilding__c(apBean.getBuilding());
             apartment.setStage__c(apBean.getSlav());
@@ -94,6 +98,7 @@ public class ImportApartmentToSFDC extends AbstractImportToSFDC {
             apartment.setRenovation_Completion_Date__c(Util.convertStringToDate(apBean.getRenovationenddate()));
             apartment.setSubtype_Code__c(apBean.getSubtypecode());
             apartment.setSubtype__c(apBean.getSubtypedes());
+            apartment.setApartment_Status__c(apBean.getGrabstatusdes());
             apartment.setReserved_Until__c(Util.convertStringToDate(apBean.getToarmourdate()));
             apartment.setCustomer_Number__c(apBean.getCustname());
             apartment.setCustomer_Name__c(apBean.getCustdes());
@@ -101,22 +106,9 @@ public class ImportApartmentToSFDC extends AbstractImportToSFDC {
             apartment.setRenovation_Status_Code__c(apBean.getImprovementstatcode());
             apartment.setRenovation_Status__c(apBean.getImprovementstatdes());
 
+            lookUp(apBean.getAppTypeUnique(), apartment, records);
             apartmentList[i] = apartment;
             i++;
-        }
-
-        QueryResult queryResult = connection.query("SELECT " +
-                                                        "Id, " +
-                                                        "Apartment_Type_Priority_ID__c " +
-                                                    "FROM Apartment_Type__c");
-
-        SObject[] records = queryResult.getRecords();
-        for(SObject sObj : records) {
-            Apartment_Type__c appType = (Apartment_Type__c) sObj;
-            if(forLookUp.containsKey(appType.getApartment_Type_Priority_ID__c())) {
-                Apartment__c apartment__c = forLookUp.get(appType.getApartment_Type_Priority_ID__c());
-                apartment__c.setApartment_Type__c(appType.getId());
-            }
         }
 
         CuttingCake cut = new CuttingCake(apartmentList);
@@ -133,4 +125,13 @@ public class ImportApartmentToSFDC extends AbstractImportToSFDC {
     public String toString() {
         return "ImportApartmentToSFDC";
     }
+
+    private void lookUp(String key, Apartment__c apartment__c, SObject[] records) {
+        for(SObject sObj : records) {
+            Apartment_Type__c appType = (Apartment_Type__c) sObj;
+            if(appType.getApartment_Type_Priority_ID__c().equals(key))
+                apartment__c.setApartment_Type__c(appType.getId());
+        }
+    }
+
 }

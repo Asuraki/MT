@@ -129,13 +129,28 @@ public class PopulateZipCode extends AbstractPopulate {
 //                    cortege1.zipCode = zipCodeBean.getG();
 //            }
             for(Cortege cortege1 : cortegeList) {
-                if(
+                if (cortege1.cityCode != null && cortege1.streetCode != null && cortege1.houseNumber != null) {
+                    if (
                         Objects.equals(Integer.valueOf(cortege1.cityCode), Integer.valueOf(zipCodeBean.getA())) &&
                         Objects.equals(Integer.valueOf(cortege1.streetCode), Integer.valueOf(zipCodeBean.getJ())) &&
                         Objects.equals(Integer.valueOf(cortege1.houseNumber), Integer.valueOf(zipCodeBean.getD())) &&
                         cortege1.zipCode == null
-                    )
-                    cortege1.zipCode = zipCodeBean.getG();
+                        )
+                        cortege1.zipCode = zipCodeBean.getG();
+                } else if (cortege1.cityCode != null && cortege1.streetCode != null) {
+                    if (
+                        Objects.equals(Integer.valueOf(cortege1.cityCode), Integer.valueOf(zipCodeBean.getA())) &&
+                        Objects.equals(Integer.valueOf(cortege1.streetCode), Integer.valueOf(zipCodeBean.getJ())) &&
+                        cortege1.zipCode == null
+                        )
+                        cortege1.zipCode = zipCodeBean.getG();
+                } else if (cortege1.cityCode != null) {
+                    if (
+                        Objects.equals(Integer.valueOf(cortege1.cityCode), Integer.valueOf(zipCodeBean.getA())) &&
+                        cortege1.zipCode == null
+                        )
+                        cortege1.zipCode = zipCodeBean.getG();
+                }
             }
         }
 

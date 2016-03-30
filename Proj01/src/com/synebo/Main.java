@@ -50,23 +50,23 @@ public class Main {
 
     private static void setRunType(String type) {
         switch (type) {
-            case "importAPAR": // done
+            case "importAPAR":
                 isRunImportAPAR = true;
                 System.out.println("Run ImportAPAR process.");
                 break;
-            case "importTYPE": // done
+            case "importTYPE":
                 isRunImportTYPE = true;
                 System.out.println("Run ImportTYPE process.");
                 break;
-            case "importPRICE": // done
+            case "importPRICE":
                 isRunImportPRICE = true;
                 System.out.println("Run ImportPRICE process.");
                 break;
-            case "export": // done (delete header)
+            case "export":
                 isRunExport = true;
                 System.out.println("Run Export process.");
                 break;
-            case "populate": // done
+            case "populate":
                 isRunPopulate = true;
                 System.out.println("Run Populate process.");
                 break;

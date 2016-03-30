@@ -128,8 +128,10 @@ public class Synchronization implements AutoCloseable {
         ConnectorConfig config = new ConnectorConfig();
         config.setUsername(sett.getLogin());
         config.setPassword(sett.getPassword() + sett.getToken());
+        config.setAuthEndpoint("https://login.salesforce.com/services/Soap/c/22.0");
         try {
             connection = Connector.newConnection(config);
+            //connection = Connector.newConnection(sett.getLogin(), sett.getPassword());
             logger.info("Successfully connected to Salesforce.");
             logger.info("Auth EndPoint:" + config.getAuthEndpoint());
             logger.info("Service EndPoint:" + config.getServiceEndpoint());
@@ -137,8 +139,10 @@ public class Synchronization implements AutoCloseable {
             logger.info("SessionId: " + config.getSessionId());
         } catch (ConnectionException e) {
             logger.severe("Connection refused: " + e.getMessage());
-            if (countTry > 5)
+            if (countTry > 5) {
+                logger.info(e.getMessage());
                 throw new SynchronizationException("Can not establish connection to Salesforce. Stop working.", e);
+            }
             logger.info("I will try again.");
             countTry++;
             connect();

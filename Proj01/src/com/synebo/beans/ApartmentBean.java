@@ -13,6 +13,9 @@ public class ApartmentBean {
     @Parsed(field = "Appdes")//11
     private String Appdes;
 
+    @Parsed(field = "AppTypeUnique")//11
+    private String AppTypeUnique;
+
     @Parsed(field = "Grabstatusdes")//11
     private String Grabstatusdes;
 
@@ -126,6 +129,10 @@ public class ApartmentBean {
 
     public String getGrabstatusdes() {
         return Grabstatusdes;
+    }
+
+    public String getAppTypeUnique() {
+        return AppTypeUnique;
     }
 
     public String getUnique() {
