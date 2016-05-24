@@ -131,7 +131,6 @@ public class Synchronization implements AutoCloseable {
         config.setAuthEndpoint("https://login.salesforce.com/services/Soap/c/22.0");
         try {
             connection = Connector.newConnection(config);
-            //connection = Connector.newConnection(sett.getLogin(), sett.getPassword());
             logger.info("Successfully connected to Salesforce.");
             logger.info("Auth EndPoint:" + config.getAuthEndpoint());
             logger.info("Service EndPoint:" + config.getServiceEndpoint());

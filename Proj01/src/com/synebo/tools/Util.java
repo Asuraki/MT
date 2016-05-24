@@ -11,7 +11,7 @@ import java.util.Date;
 public class Util {
 
     public static String convertDateToString(Calendar calendar) {
-        return calendar != null ? new SimpleDateFormat("ddMMYY").format(new Date(calendar.getTimeInMillis())) : null;
+        return calendar != null ? new SimpleDateFormat("ddMMYYYY").format(new Date(calendar.getTimeInMillis())) : null;
     }
 
     public static boolean convertStringToBoolean(String s) {

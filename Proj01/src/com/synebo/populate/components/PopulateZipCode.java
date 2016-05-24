@@ -99,6 +99,7 @@ public class PopulateZipCode extends AbstractPopulate {
         Account account;
         Contact contact;
 
+
         for(SObject sObject : leads){
             lead = (Lead) sObject;
             cortege = new Cortege(lead.getCity_Code__c(), lead.getStreet_Code__c(), lead.getHouse_Number__c());
@@ -120,33 +121,25 @@ public class PopulateZipCode extends AbstractPopulate {
 
         // set zipCode to Cortege from csv
         for(ZipCodeBean zipCodeBean : zipCodeBeans) {
-//            for(Cortege cortege1 : cortegeList) {
-//                if(
-//                        Objects.equals(cortege1.cityCode, zipCodeBean.getA()) &&
-//                        Objects.equals(cortege1.streetCode, zipCodeBean.getJ()) &&
-//                        Objects.equals(Integer.valueOf(cortege1.houseNumber), Integer.valueOf(zipCodeBean.getD())) && cortege1.zipCode == null
-//                        )
-//                    cortege1.zipCode = zipCodeBean.getG();
-//            }
             for(Cortege cortege1 : cortegeList) {
                 if (cortege1.cityCode != null && cortege1.streetCode != null && cortege1.houseNumber != null) {
                     if (
-                        Objects.equals(Integer.valueOf(cortege1.cityCode), Integer.valueOf(zipCodeBean.getA())) &&
-                        Objects.equals(Integer.valueOf(cortege1.streetCode), Integer.valueOf(zipCodeBean.getJ())) &&
-                        Objects.equals(Integer.valueOf(cortege1.houseNumber), Integer.valueOf(zipCodeBean.getD())) &&
+                        Objects.equals(deleteZero(cortege1.cityCode), deleteZero(zipCodeBean.getA())) &&
+                        Objects.equals(deleteZero(cortege1.streetCode), deleteZero(zipCodeBean.getJ())) &&
+                        Objects.equals(deleteZero(cortege1.houseNumber), deleteZero(zipCodeBean.getD())) &&
                         cortege1.zipCode == null
                         )
                         cortege1.zipCode = zipCodeBean.getG();
                 } else if (cortege1.cityCode != null && cortege1.streetCode != null) {
                     if (
-                        Objects.equals(Integer.valueOf(cortege1.cityCode), Integer.valueOf(zipCodeBean.getA())) &&
-                        Objects.equals(Integer.valueOf(cortege1.streetCode), Integer.valueOf(zipCodeBean.getJ())) &&
+                        Objects.equals(deleteZero(cortege1.cityCode), deleteZero(zipCodeBean.getA())) &&
+                        Objects.equals(deleteZero(cortege1.streetCode), deleteZero(zipCodeBean.getJ())) &&
                         cortege1.zipCode == null
                         )
                         cortege1.zipCode = zipCodeBean.getG();
                 } else if (cortege1.cityCode != null) {
                     if (
-                        Objects.equals(Integer.valueOf(cortege1.cityCode), Integer.valueOf(zipCodeBean.getA())) &&
+                        Objects.equals(deleteZero(cortege1.cityCode), deleteZero(zipCodeBean.getA())) &&
                         cortege1.zipCode == null
                         )
                         cortege1.zipCode = zipCodeBean.getG();
@@ -217,13 +210,25 @@ public class PopulateZipCode extends AbstractPopulate {
 
         CuttingCake cut = new CuttingCake(result);
         while(cut.hasNext()) {
-            SaveResult[] saveResults = connection.update(cut.next());
+            SObject[] tmp = cut.next();
+            for(SObject tm : tmp) {
+                System.out.println(tm.getId());
+            }
+            SaveResult[] saveResults = connection.update(tmp);
+            int ia = 0;
             for(SaveResult saveResult : saveResults) {
-                if(!saveResult.isSuccess())
-                    logger.warning(saveResult.getId()+" have errors: "+ Arrays.toString(saveResult.getErrors()));
+                logger.warning(ia++ + " " + saveResult.getId() + " have errors: " + Arrays.toString(saveResult.getErrors()));
             }
         }
         logger.info("Update records. "+syncedCount+" records Synced. "+failedCount+" records Failed");
+    }
+
+    private static String deleteZero(String data) {
+        if(data != null)
+            while (data.startsWith("0")) {
+            data = data.replaceFirst("0","");
+        }
+        return data;
     }
 
     @Override
@@ -257,40 +262,5 @@ public class PopulateZipCode extends AbstractPopulate {
             this.sObject = sObject;
         }
 
-
-
-
-//        @Override
-//        public boolean equals(Object o) {
-//            if (this == o) return true;
-//            if (o == null || getClass() != o.getClass()) return false;
-//
-//            Cortege cortege = (Cortege) o;
-//
-//            if (!cityCode.equals(cortege.cityCode)) return false;
-//            if (!streetCode.equals(cortege.streetCode)) return false;
-//            //return cortege.houseNumber == null ? true : houseNumber.equals(cortege.houseNumber);
-//            if(cortege.houseNumber == null && houseNumber == null) return true;
-//            if(cortege.houseNumber != null && houseNumber != null) return Integer.valueOf(houseNumber) == Integer.valueOf(cortege.houseNumber);
-//            return cortege.houseNumber == null || houseNumber == null ? true : Integer.valueOf(houseNumber) == Integer.valueOf(cortege.houseNumber);
-//        }
-//
-//        @Override
-//        public int hashCode() {
-//            int result = cityCode.hashCode();
-//            result = 31 * result + streetCode.hashCode();
-//            result = 31 * result + (houseNumber != null ? houseNumber.hashCode() : 0);
-//            return result;
-//        }
-//
-//        @Override
-//        public String toString() {
-//            return "Cortege{" +
-//                    "cityCode='" + cityCode + '\'' +
-//                    ", streetCode='" + streetCode + '\'' +
-//                    ", houseNumber='" + houseNumber + '\'' +
-//                    ", zipCode='" + zipCode + '\'' +
-//                    '}';
-//        }
     }
 }

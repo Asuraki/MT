@@ -35,8 +35,10 @@ public abstract class AbstractExportFromSFDC implements ExportFromSFDC {
                 logger.warning("Problems with the connection. I will try again.");
                 countTry++;
                 execute();
-            } else
+            } else {
+                logger.warning(e.toString());
                 e.printStackTrace();
+            }
         } catch (Exception e) {
             logger.warning("Synchronization " + this + " is unsuccessful. "+e.getClass().getName()+" Message: " + e.getMessage());
             //e.printStackTrace();

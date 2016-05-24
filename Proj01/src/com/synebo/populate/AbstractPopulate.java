@@ -33,10 +33,14 @@ public abstract class AbstractPopulate implements Populate {
         } catch (ConnectionException e) {
             if (countTry < 5) {
                 logger.warning("Problems with the connection. I will try again.");
+                System.out.println(e);
                 countTry++;
                 execute();
-            } else
+            } else {
+                logger.warning(e.toString());
                 e.printStackTrace();
+            }
+
         }
         catch (Exception e) {
             logger.warning("Synchronization " + this + " is unsuccessful. "+e.getClass().getName()+" Message: " + e.getMessage());
